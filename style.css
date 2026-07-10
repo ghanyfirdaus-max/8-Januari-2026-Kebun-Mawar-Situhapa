@@ -1,0 +1,449 @@
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(180deg,#fff5f8,#fffdfd,#ffffff);
+    color:#444;
+    overflow-x:hidden;
+}
+
+
+/* ===========================
+   LOADING
+=========================== */
+
+#loading{
+
+    position:fixed;
+    inset:0;
+
+    background:white;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+    z-index:99999;
+
+    transition:1s;
+}
+
+#loading h1{
+
+    font-size:65px;
+
+    animation:love 1.5s infinite;
+}
+
+#loading p{
+
+    margin-top:15px;
+
+    color:#999;
+}
+
+.hide-loading{
+
+    opacity:0;
+
+    visibility:hidden;
+}
+
+
+
+/* ===========================
+   HERO
+=========================== */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+    text-align:center;
+
+    padding:80px 20px;
+
+}
+
+.hero h1{
+
+    font-size:60px;
+
+    color:#df77a4;
+
+    margin-bottom:10px;
+
+    animation:fadeDown 1s;
+}
+
+.hero h2{
+
+    color:#df77a4;
+
+    font-weight:400;
+
+    margin-bottom:25px;
+
+    animation:fadeDown 1.3s;
+}
+
+.hero p{
+
+    max-width:700px;
+
+    font-size:22px;
+
+    line-height:1.8;
+
+    color:#555;
+
+    font-style:italic;
+
+    animation:fadeUp 1.6s;
+}
+
+#mulai{
+
+    margin-top:45px;
+
+    border:none;
+
+    background:#df77a4;
+
+    color:white;
+
+    padding:16px 34px;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    font-size:17px;
+
+    transition:.4s;
+}
+
+#mulai:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 15px 35px rgba(223,119,164,.35);
+}
+
+
+
+/* ===========================
+   GALLERY
+=========================== */
+
+.gallery{
+
+    width:90%;
+
+    max-width:900px;
+
+    margin:100px auto;
+
+    text-align:center;
+}
+
+.gallery h2{
+
+    color:#df77a4;
+
+    margin-bottom:35px;
+
+    font-size:35px;
+}
+
+.slider{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:30px;
+
+    box-shadow:0 25px 50px rgba(223,119,164,.18);
+}
+
+.slide{
+
+    display:none;
+
+    width:100%;
+
+    height:auto;
+
+    object-fit:contain;
+}
+
+.slide.active{
+
+    display:block;
+
+    animation:fade .8s;
+}
+
+.dots{
+
+    margin-top:25px;
+}
+
+.dot{
+
+    display:inline-block;
+
+    width:13px;
+
+    height:13px;
+
+    border-radius:50%;
+
+    background:#ffc5d9;
+
+    margin:0 6px;
+
+    transition:.3s;
+}
+
+.dot.active{
+
+    background:#df77a4;
+
+    transform:scale(1.2);
+}
+
+
+
+/* ===========================
+   VIDEO
+=========================== */
+
+.video-card{
+
+    width:90%;
+
+    max-width:900px;
+
+    margin:80px auto;
+
+    background:white;
+
+    border-radius:30px;
+
+    padding:35px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+}
+
+.video-card h2{
+
+    color:#df77a4;
+
+    margin-bottom:20px;
+
+    text-align:center;
+}
+
+video{
+
+    width:100%;
+
+    border-radius:20px;
+}
+
+
+
+/* ===========================
+   LETTER
+=========================== */
+
+.letter{
+
+    width:90%;
+
+    max-width:900px;
+
+    margin:100px auto;
+
+    text-align:center;
+}
+
+.letter h2{
+
+    color:#df77a4;
+
+    margin-bottom:25px;
+}
+
+.letter-box{
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    box-shadow:0 15px 40px rgba(223,119,164,.15);
+
+    line-height:2;
+
+    font-size:19px;
+}
+
+
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+
+    text-align:center;
+
+    padding:70px 20px;
+
+    color:#999;
+}
+
+
+
+/* ===========================
+   PETALS
+=========================== */
+
+.petals{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:-1;
+}
+
+
+
+/* ===========================
+   ANIMATION
+=========================== */
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.97);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+    }
+
+}
+
+@keyframes love{
+
+    50%{
+
+        transform:scale(1.2);
+    }
+
+}
+
+@keyframes fadeDown{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(-40px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+    }
+
+}
+
+
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:768px){
+
+.hero h1{
+
+    font-size:38px;
+}
+
+.hero p{
+
+    font-size:18px;
+}
+
+.gallery h2{
+
+    font-size:28px;
+}
+
+.video-card{
+
+    padding:20px;
+}
+
+.letter-box{
+
+    padding:25px;
+
+    font-size:17px;
+}
+
+}
